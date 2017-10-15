@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore;
 using AngularWeb.Business.Model;
 using AngularWeb.Business;
 using AngularWeb.DataAccess;
+using AutoMapper;
 
 namespace AngularWeb
 {
@@ -25,6 +26,9 @@ namespace AngularWeb
       services.AddScoped<IUnitOfWork, UnitOfWork>();
       services.AddScoped<IRepository<User>, Repository<User>>();
       services.AddScoped<IUserRepository, UserRepository>();
+
+      services.AddAutoMapper();
+
       services.AddMvc();
 
       services.AddDbContext<AngularWebContext>(options => options.UseSqlServer(Configuration.GetConnectionString("AppDatabase")));
@@ -52,13 +56,19 @@ namespace AngularWeb
       app.UseMvc(routes =>
       {
         routes.MapRoute(
-          name: "api",
-          template: "api/{controller}/{id?}");
-
-        routes.MapRoute(
                   name: "default",
                   template: "{controller=Home}/{action=Index}/{id?}");
 
+      });
+
+      app.MapWhen(x => !x.Request.Path.Value.StartsWith("/api"), builder =>
+      {
+        builder.UseMvc(routes =>
+        {
+          routes.MapSpaFallbackRoute(
+              name: "spa-fallback",
+              defaults: new { controller = "Home", action = "Index" });
+        });
       });
     }
   }
