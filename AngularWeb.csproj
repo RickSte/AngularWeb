@@ -29,6 +29,10 @@
     <None Remove="ClientApp\app\components\login\login.component.ts" />
     <None Remove="ClientApp\app\components\register\register.component.ts" />
     <None Remove="ClientApp\app\components\shared\navbar\navbar.component.ts" />
+    <None Remove="ClientApp\app\components\shared\priority.ts" />
+    <None Remove="ClientApp\app\components\shared\status.ts" />
+    <None Remove="ClientApp\app\components\shared\tododto.ts" />
+    <None Remove="ClientApp\app\components\todo\todo.component.ts" />
     <None Remove="ClientApp\app\services\authentication.service.ts" />
     <None Remove="ClientApp\app\services\authGuard.service.ts" />
     <None Remove="ClientApp\app\services\formErrors.service.ts" />
@@ -41,11 +45,16 @@
     <TypeScriptCompile Include="ClientApp\app\components\login\login.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\register\register.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\shared\navbar\navbar.component.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\priority.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\status.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\shared\tododto.ts" />
     <TypeScriptCompile Include="ClientApp\app\components\shared\userdto.ts" />
+    <TypeScriptCompile Include="ClientApp\app\components\todo\todo.component.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\authentication.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\authGuard.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\formErrors.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\navbar.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\tododto.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\userdto.service.ts" />
   </ItemGroup>
 

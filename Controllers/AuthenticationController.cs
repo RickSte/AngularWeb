@@ -11,7 +11,7 @@ using AngularWeb.Business.Model;
 namespace AngularWeb.Controllers
 {
   [Route("api/[controller]")]
-  public class AuthenticationController : Controller
+  public class AuthenticationController : ControllerBase
   {
     private readonly IUnitOfWork _unitOfWork;
     private readonly IMapper _mapper;
@@ -24,16 +24,19 @@ namespace AngularWeb.Controllers
 
 
 
-    [HttpPost]
-    [Route("api/authentication/logout")]
-    public void Post()
+    [HttpPut]
+    public IActionResult LogoutUser()
     {
-     
+      //remove User from session
+
+      return Ok();
     }
 
     [HttpPost]
     public IActionResult AuthenticateUser([FromBody] UserDto userDto)
     {
+      //create User Session
+
       User loginUser = _unitOfWork.Users.GetUserByEmail(userDto.Email);
 
       if (loginUser == null)

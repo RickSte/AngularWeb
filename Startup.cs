@@ -26,6 +26,8 @@ namespace AngularWeb
       services.AddScoped<IUnitOfWork, UnitOfWork>();
       services.AddScoped<IRepository<User>, Repository<User>>();
       services.AddScoped<IUserRepository, UserRepository>();
+      services.AddScoped<IRepository<Todo>, Repository<Todo>>();
+      services.AddScoped<ITodoRepository, TodoRepository>();
 
       services.AddAutoMapper();
 

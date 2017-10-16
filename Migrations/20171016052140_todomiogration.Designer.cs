@@ -11,9 +11,10 @@ using System;
 namespace AngularWeb.Migrations
 {
     [DbContext(typeof(AngularWebContext))]
-    partial class AngularWebContextModelSnapshot : ModelSnapshot
+    [Migration("20171016052140_todomiogration")]
+    partial class todomiogration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -25,8 +26,6 @@ namespace AngularWeb.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<Guid?>("CreatorId");
-
                     b.Property<DateTime>("DueDate");
 
                     b.Property<string>("Name")
@@ -37,8 +36,6 @@ namespace AngularWeb.Migrations
                     b.Property<int>("Status");
 
                     b.HasKey("Id");
-
-                    b.HasIndex("CreatorId");
 
                     b.ToTable("Todo");
                 });
@@ -63,13 +60,6 @@ namespace AngularWeb.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Users");
-                });
-
-            modelBuilder.Entity("AngularWeb.Business.Model.Todo", b =>
-                {
-                    b.HasOne("AngularWeb.Business.Model.User", "Creator")
-                        .WithMany("Todos")
-                        .HasForeignKey("CreatorId");
                 });
 #pragma warning restore 612, 618
         }

@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace AngularWeb.Controllers
 {
     public class HomeController : Controller
-    {
+  {
     public IActionResult Index()
     {
       return View();

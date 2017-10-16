@@ -9,14 +9,18 @@ export class FormErrorsService {
    email: "",
    firstName: "",
    lastName: "",
-   password: ""
+   password: "",
+   name: "",
+   duedate: ""
  }
 
  public validationMessages = {
    email: { 'required': "Email is required", 'email': "Email is invalid" },
    firstName: { 'required': "First name is required" },
    lastName: { 'required': "Last name is required" },
-   password: { 'required': "Password is required", 'minlength': "Password must be at least 6 charachters long" }
+   password: { 'required': "Password is required", 'minlength': "Password must be at least 6 charachters long" },
+   name: { 'required': 'Name is Required' },
+   duedate: {'required':'DueDate is Required'}
  }
 
 }

@@ -14,6 +14,8 @@ namespace AngularWeb.DataAccess
     {
       CreateMap<User, UserDto>();
       CreateMap<UserDto, User>();
+      CreateMap<Todo, TodoDto>();
+      CreateMap<TodoDto, Todo>();
     }
     }
 }

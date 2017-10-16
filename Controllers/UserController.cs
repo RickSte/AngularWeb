@@ -68,7 +68,7 @@ namespace AngularWeb.Controllers
 
       _unitOfWork.Complete();
 
-      return Ok();
+      return Ok(userdto);
     }
     }
 }

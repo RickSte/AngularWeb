@@ -1,0 +1,47 @@
+﻿<form [formGroup]="todoForm" class="form-horizontal" (submit)="create()" novalidate>
+
+    <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" formControlName="name" id="name" />
+    </div>
+    <div *ngIf="formError.formErrors.name" class="alert alert-danger">
+        {{ formError.formErrors.name }}
+    </div>
+
+    <div class="form-group">
+        <label for="priority">Priority</label>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" formControlName="priority" id="low" required value="Low" />
+                Low
+            </label>
+        </div>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" formControlName="priority" id="medium" required value="Medium" />
+                Medium
+            </label>
+        </div>
+        <div class="form-check-inline">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" formControlName="priority" id="high" required value="High" />
+                High
+            </label>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <label for="duedate">DueDate</label>
+        <input type="date" class="form-control" formControlName="duedate" id="duedate" />
+    </div>
+    <div *ngIf="formError.formErrors.duedate" class="alert alert-danger">
+        {{ formError.formErrors.duedate }}
+    </div>
+
+    <div class="form-group">
+        <div class="col-sm-offset-2 col-sm-10">
+            <button type="submit" class="btn btn-primary" [disabled]="todoForm.invalid">Create</button>
+        </div>
+    </div>
+
+</form>

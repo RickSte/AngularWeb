@@ -11,9 +11,10 @@ using System;
 namespace AngularWeb.Migrations
 {
     [DbContext(typeof(AngularWebContext))]
-    partial class AngularWebContextModelSnapshot : ModelSnapshot
+    [Migration("20171016054350_addedusermigration")]
+    partial class addedusermigration
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

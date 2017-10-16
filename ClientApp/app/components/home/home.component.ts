@@ -1,5 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit,Output,EventEmitter } from '@angular/core';
+import { UserDto } from '../shared/userdto';
+
 import { NavbarService } from '../../services/navbar.service';
+
 
 @Component({
   selector: 'home',
@@ -7,10 +10,12 @@ import { NavbarService } from '../../services/navbar.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(public nav: NavbarService) { }
+  constructor(private nav: NavbarService) { }
 
   ngOnInit() {
     this.nav.show();
+    this.nav.updateUser();
+
   }
   
 

@@ -8,6 +8,7 @@ namespace AngularWeb.Business
     public interface IUnitOfWork : IDisposable
     {
     IUserRepository Users { get; }
+    ITodoRepository Todos { get; }
     int Complete();
     }
 }

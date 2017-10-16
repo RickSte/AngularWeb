@@ -17,6 +17,7 @@ namespace AngularWeb.Business.Model
     {
       base.OnModelCreating(modelBuilder);
       new UserMap(modelBuilder.Entity<User>());
+      new TodoMap(modelBuilder.Entity<Todo>());
     }
   }
 }
