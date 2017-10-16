@@ -21,7 +21,7 @@ namespace AngularWeb.Business.Model
       FirstName = firstName;
       LastName = lastName;
       Email = email;
-      Password = password;
+      Password = HashPassword(email + password);
     }
 
     public Guid Id { get; set; }
@@ -46,6 +46,14 @@ namespace AngularWeb.Business.Model
       if (string.IsNullOrWhiteSpace(password) || password.Length < 6)
         throw new ArgumentException("Invalid Password!");
       
+    }
+    private string HashPassword(string emailAndCleartTextPassword)
+    {
+      return BCrypt.Net.BCrypt.HashPassword(emailAndCleartTextPassword);
+    }
+    public bool VerifyPassword(string userSubmittedPassword)
+    {
+      return BCrypt.Net.BCrypt.Verify(userSubmittedPassword, Password);
     }
   }
 }

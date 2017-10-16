@@ -10,6 +10,7 @@
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="6.1.1" />
     <PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="3.0.1" />
+    <PackageReference Include="BCrypt.Net-Core" Version="1.4.0" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.0" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.0" />
   </ItemGroup>
@@ -30,6 +31,7 @@
     <None Remove="ClientApp\app\components\shared\navbar\navbar.component.ts" />
     <None Remove="ClientApp\app\services\authentication.service.ts" />
     <None Remove="ClientApp\app\services\authGuard.service.ts" />
+    <None Remove="ClientApp\app\services\formErrors.service.ts" />
     <None Remove="ClientApp\app\services\Navbar.service.ts" />
     <None Remove="ClientApp\app\services\userdto.service.ts" />
   </ItemGroup>
@@ -42,6 +44,7 @@
     <TypeScriptCompile Include="ClientApp\app\components\shared\userdto.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\authentication.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\authGuard.service.ts" />
+    <TypeScriptCompile Include="ClientApp\app\services\formErrors.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\navbar.service.ts" />
     <TypeScriptCompile Include="ClientApp\app\services\userdto.service.ts" />
   </ItemGroup>
